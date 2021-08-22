@@ -28,13 +28,13 @@ namespace fake_db
         return CommandFactory::commands[str];
     }
 
-    void Query::execute(std::string& str)
+    void QueryCRUD::execute(std::string& str)
     {
         m_instruct = str;
         parse_token();
     }
 
-    void Query::parse_token()
+    void QueryCRUD::parse_token()
     {
         std::string str = "";
         for (int i = 0; i < m_instruct.size(); ++i) {
@@ -58,7 +58,7 @@ namespace fake_db
         }
     }
 
-    bool Query::doesSuchDBExist(int index, std::string& str) const
+    bool QueryCRUD::doesSuchDBExist(int index, std::string& str) const
     {
         std::ifstream file("db_list.txt");
         std::string nameDB;
