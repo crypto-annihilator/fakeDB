@@ -26,11 +26,11 @@ namespace fake_db
         static std::unordered_map<std::string, BaseInstruction*> commands;
     };
 
-    class Query
+    class QueryCRUD
     {
     public:
         virtual void execute (std::string& str);
-        virtual ~Query(){};
+        virtual ~QueryCRUD(){};
     public:
         //tokenizer
         void parse_token();
@@ -43,7 +43,7 @@ namespace fake_db
         std::vector<std::string> m_vec;
     };
 
-    class QueryIUDS : public Query
+    class QueryIUDS : public QueryCRUD
     {
     public:
         QueryIUDS(){};
@@ -74,4 +74,3 @@ namespace fake_db
     };
 }
 #endif //FAKE_DB_H
-
