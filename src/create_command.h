@@ -5,7 +5,7 @@
 
 namespace fake_db
 {
-    class CreateCommand : public BaseInstruction, Query
+    class CreateCommand : public BaseInstruction, QueryCRUD
     {
     public:
         void operator()(std::string& str) override;
